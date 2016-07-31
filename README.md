@@ -1,8 +1,18 @@
 # Grav Taxonomy List Plugin
 
-`Taxonomylist` is a [Grav](http://github.com/getgrav/grav) plugin that generates a list of linked tags collected throughout	the site.
+`Taxonomylist` is a [Grav](http://github.com/getgrav/grav) plugin that generates a list of linked tags collected throughout the site.
 
 ![Taxonomy List](assets/readme_1.png)
+
+## Note on the branch `filter_blog_tags`
+
+The branch `filter_blog_tags` removes all tag values of pages without 
+the taxonomy `category` named `blog`.
+The reason is that taxonomylist fails to build working links to
+pages that don't have a route starting with `/blog`.
+
+The blog.scss of the antimatter theme is adapted to highlight the active tag
+(thats's the 'popular' tag clicked on, creating a list of matching pages).
 
 # Installation
 
