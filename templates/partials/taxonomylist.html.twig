@@ -13,4 +13,6 @@
         <a class="{{ active }}" href="{{ list_url }}/{{ taxonomy }}{{ config.system.param_sep }}{{ tax }}">{{ tax }}</a>
     {% endfor %}
 </span>
+{% else %}
+    <ul>No pages or tags found.</ul>
 {% endif %}
