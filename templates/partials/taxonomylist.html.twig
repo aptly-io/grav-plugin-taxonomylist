@@ -1,10 +1,16 @@
+{# input: #}
+{#    base_url set by the including twig (e.g. sidebar.html.twig)#}
+{#              base_url has been replaced by list_url here. #}
+{#              list_url is set-up in twig variable by taxonomylist.php#}
+{#    taxonomy set by the including twig to 'tag' (e.g. sidebar.html.twig)#}
+
 {% set taxlist = taxonomylist.get() %}
 
 {% if taxlist %}
 <span class="tags">
     {% for tax,value in taxlist[taxonomy] %}
         {% set active = uri.param(taxonomy) == tax ? 'active' : '' %}
-        <a class="{{ active }}" href="{{ base_url }}/{{ taxonomy }}{{ config.system.param_sep }}{{ tax }}">{{ tax }}</a>
+        <a class="{{ active }}" href="{{ list_url }}/{{ taxonomy }}{{ config.system.param_sep }}{{ tax }}">{{ tax }}</a>
     {% endfor %}
 </span>
 {% endif %}
